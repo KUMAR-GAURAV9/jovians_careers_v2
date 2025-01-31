@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Vacancies - Jovians Careers</title>
+  <script src="https://cdn.tailwindcss.com"></script> 
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      color: #2d3748;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .card-shadow:hover {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .btn-hover:hover {
+      background-color: #3b82f6;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  {% include 'nav.html' %}
+  <!-- Header -->
+  <h1 class="text-4xl font-extrabold text-gray-800 mt-8">Jovian Careers</h1>
+
+  <!-- Main Container -->
+  <div class="container max-w-3xl bg-white shadow-lg rounded-3xl p-8 mt-6 border border-gray-200">
+    
+    <!-- Banner Image -->
+    <img src="https://ac5f0eda-1d40-4ab8-8891-95e77a599bf2-00-24vu5gh4b4ivn.riker.replit.dev/static/banner.jpg" alt="Company Banner" class="rounded-lg mb-6">
+
+    <!-- About Jovian -->
+    <h2 class="text-center text-3xl font-semibold text-gray-800 mt-4">About Jovian</h2>
+    <p class="text-gray-600 text-center mt-2 text-lg max-w-3xl mx-auto">
+      Welcome to <b>Jovians-Careers</b>, your go-to platform for connecting job seekers with top employers.
+      We simplify the hiring process by bridging the gap between talent and opportunity. Whether you're a fresher 
+      or an experienced professional, we offer a wide range of job listings across industries.
+    </p>
+    <p class="text-gray-600 text-center mt-2 text-lg max-w-3xl mx-auto">
+      Join <b>Jovians-Careers</b> today and take the next step toward your dream career!
+    </p>
+
+    <!-- Job Listings -->
+    <h3 class="text-2xl font-bold text-gray-800 mt-8">Available Positions</h3>
+    <div class="mt-6 space-y-6">
+
+      {% for job in jobs %}
+        <!-- Job Card -->
+        <div class="bg-white rounded-2xl p-6 shadow-lg card-shadow flex items-start justify-between">
+          
+          <!-- Job Details -->
+          <div>
+            <h4 class="text-xl font-semibold text-gray-800">{{ job['title'] }}</h4>
+            <p class="text-gray-600 mt-2">
+              <b class="text-gray-700">Location:</b> {{ job['location'] }}
+            </p>
+          </div>
+
+          <!-- Apply Button -->
+          <div>
+            <a href="mailto:gk877428@gmail.com?subject=Application%20for%20{{ job['title'] }}&body=YOUR%20NAME:%0D%0A%0D%0ARESUME:%0D%0A%0D%0ALINKEDIN%20PROFILE:%0D%0A%0D%0A%0A" class="btn-hover border border-blue-500 text-blue-500 px-6 py-3 rounded-lg font-medium transition duration-300">
+              Apply
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="text-center py-6 mt-8 bg-gray-100 rounded-lg shadow-lg w-full">
+    <a href="mailto:gk877428@gmail.com?subject=Issue%20with%20Jovians%20Careers%20Platform&body=Please%20describe%20the%20issue%20you%20faced%20here:%0D%0A%0D%0A%0A" class="btn-hover border border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white font-medium py-3 px-6 rounded-md transition duration-300">
+      Contact Us
+    </a>
+    <p class="mt-4 text-gray-600 text-sm font-medium">© 2024, Jovians-Careers. All rights reserved.</p>
+  </div>
+   {% include 'footer.html' %}
+</body>
+</html>

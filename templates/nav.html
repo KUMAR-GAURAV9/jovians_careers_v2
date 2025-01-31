@@ -1,0 +1,49 @@
+<!-- Navbar -->
+<nav class="bg-white shadow-md w-full fixed top-0 left-0 z-50">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    
+    <!-- Logo & Brand Name -->
+    <a href="#" class="flex items-center text-blue-600 font-extrabold text-2xl">
+      <img src="/static/jovian.svg" alt="Jovians Careers Logo" class="w-10 h-10 rounded-full mr-3">
+      Jovians Careers
+    </a>
+
+    <!-- Navigation Links -->
+    <div class="hidden md:flex space-x-8">
+      <a href="#" class="text-gray-700 font-medium hover:text-blue-600 transition duration-300">Home</a>
+      <a href="#" class="text-gray-700 font-medium hover:text-blue-600 transition duration-300">Jobs</a>
+      <a href="#" class="text-gray-700 font-medium hover:text-blue-600 transition duration-300">About</a>
+      <a href="#" class="text-gray-700 font-medium hover:text-blue-600 transition duration-300">Contact</a>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="hidden md:flex">
+      <input type="text" placeholder="Search jobs..." class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+      <button class="ml-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">Search</button>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="menu-btn" class="md:hidden text-gray-600 focus:outline-none">
+      <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md px-6 py-4">
+    <a href="#" class="block py-2 text-gray-700 font-medium hover:text-blue-600 transition duration-300">Home</a>
+    <a href="#" class="block py-2 text-gray-700 font-medium hover:text-blue-600 transition duration-300">Jobs</a>
+    <a href="#" class="block py-2 text-gray-700 font-medium hover:text-blue-600 transition duration-300">About</a>
+    <a href="#" class="block py-2 text-gray-700 font-medium hover:text-blue-600 transition duration-300">Contact</a>
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</nav>
