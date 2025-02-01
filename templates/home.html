@@ -43,7 +43,8 @@
   <div class="container max-w-3xl bg-white shadow-lg rounded-3xl p-8 mt-6 border border-gray-200">
     
     <!-- Banner Image -->
-    <img src="https://ac5f0eda-1d40-4ab8-8891-95e77a599bf2-00-24vu5gh4b4ivn.riker.replit.dev/static/banner.jpg" alt="Company Banner" class="rounded-lg mb-6">
+    <img src="{{ url_for('static', filename='banner.jpg') }}" alt="Company Banner" class="rounded-lg mb-6">
+
 
     <!-- About Jovian -->
     <h2 class="text-center text-3xl font-semibold text-gray-800 mt-4">About Jovian</h2>
